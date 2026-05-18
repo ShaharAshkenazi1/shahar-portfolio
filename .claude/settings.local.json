@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(vercel whoami *)",
+      "Bash(CI=true npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)"
+    ]
+  }
+}
