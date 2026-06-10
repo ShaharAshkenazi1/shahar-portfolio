@@ -2,7 +2,33 @@
   "permissions": {
     "allow": [
       "Bash(vercel whoami *)",
-      "Bash(CI=true npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)"
+      "Bash(CI=true npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const keys = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('link'\\)\\); console.log\\(keys\\);\")",
+      "Bash(vercel --version)",
+      "Bash(vercel --yes)",
+      "Bash(vercel --yes --scope shahar-ashkenazi1)",
+      "Bash(vercel inspect *)",
+      "Bash(vercel --prod --yes --scope shahar-ashkenazi1)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(gunzip -c \"C:/Users/שחר אשכנזי/.claude/projects/C--Users-shahar-ashkenazi-shahar-portfolio/def87d76-fef8-4d33-a4cd-231fe650ac48/tool-results/webfetch-1779112469803-98k8nf.bin\")",
+      "Bash(tar tf *)",
+      "Bash(tar xf *)",
+      "Read(//tmp/untitled/project/**)",
+      "Bash(cat .vercel/project.json)",
+      "Bash(git status *)",
+      "Skill(vercel:deploy)",
+      "Bash(vercel)",
+      "Bash(git -C \"C:\\\\Users\\\\shahar ashkenazi\\\\shahar-portfolio\\\\.claude\\\\worktrees\\\\fix-portfolio-issues\" log --oneline -5)",
+      "Bash(git -C \"C:\\\\Users\\\\shahar ashkenazi\\\\shahar-portfolio\\\\.claude\\\\worktrees\\\\fix-portfolio-issues\" status)",
+      "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shahar ashkenazi\\\\shahar-portfolio\\\\.claude\")",
+      "Bash(Out-Null)",
+      "Bash(Set-Content -Path \"C:\\\\Users\\\\shahar ashkenazi\\\\shahar-portfolio\\\\.claude\\\\settings.json\" -Value '{\"worktree\":{\"bgIsolation\":\"none\"}}' -Encoding utf8)",
+      "Bash(mkdir -p \"C:/Users/shahar ashkenazi/shahar-portfolio/.claude\")",
+      "Bash(echo '{\"worktree\":{\"bgIsolation\":\"none\"}}')",
+      "Bash(vercel --prod --scope shahar-ashkenazi1)",
+      "WebFetch(domain:shahar-ashkenazi.com)"
     ]
   }
 }
