@@ -60,7 +60,7 @@ export default function ParticleNetwork() {
     resize();
     seed();
 
-    const onResize = () => resize();
+    const onResize = () => { resize(); seed(); };
     const onMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       mouseX = e.clientX - rect.left;

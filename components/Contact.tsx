@@ -10,11 +10,15 @@ const t = { duration: 0.55, ease: "easeOut" as const };
 export default function Contact() {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = (e: React.MouseEvent) => {
-    e.preventDefault();
-    navigator.clipboard.writeText("ashkenazi1997@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = async (e: React.MouseEvent) => {
+    try {
+      await navigator.clipboard.writeText("ashkenazi1997@gmail.com");
+      e.preventDefault();
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard failed — let the mailto: link open naturally
+    }
   };
 
   return (

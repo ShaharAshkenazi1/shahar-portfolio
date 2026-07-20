@@ -255,6 +255,8 @@ function ProjectModal({
   const [visible, setVisible] = useState(false);
   const closingRef = useRef(false);
   const touchStartY = useRef(0);
+  const modalInnerRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const project = PROJECTS[projectKey];
 
   const handleClose = useCallback(() => {
@@ -265,9 +267,14 @@ function ProjectModal({
   }, [onClose]);
 
   useEffect(() => {
-    const id = requestAnimationFrame(() =>
-      requestAnimationFrame(() => setVisible(true))
-    );
+    let outerRaf: number;
+    let innerRaf: number;
+    outerRaf = requestAnimationFrame(() => {
+      innerRaf = requestAnimationFrame(() => {
+        setVisible(true);
+        closeButtonRef.current?.focus();
+      });
+    });
     document.body.classList.add("modal-open");
 
     const onKey = (e: KeyboardEvent) => {
@@ -278,7 +285,8 @@ function ProjectModal({
     return () => {
       document.body.classList.remove("modal-open");
       document.removeEventListener("keydown", onKey);
-      cancelAnimationFrame(id);
+      cancelAnimationFrame(outerRaf);
+      cancelAnimationFrame(innerRaf);
     };
   }, [handleClose]);
 
@@ -288,7 +296,7 @@ function ProjectModal({
 
   const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     const delta = e.touches[0].clientY - touchStartY.current;
-    if (delta > 120 && e.currentTarget.scrollTop <= 0) handleClose();
+    if (delta > 120 && (modalInnerRef.current?.scrollTop ?? 0) <= 0) handleClose();
   };
 
   return (
@@ -303,6 +311,7 @@ function ProjectModal({
       <div className="modal-backdrop" onClick={handleClose} />
       <div className="modal" role="document">
         <button
+          ref={closeButtonRef}
           className="modal-close"
           type="button"
           aria-label="Close"
@@ -318,7 +327,7 @@ function ProjectModal({
           </svg>
         </button>
 
-        <div className="modal-inner">
+        <div className="modal-inner" ref={modalInnerRef}>
           <header className="modal-head">
             <div className="label accent">{project.eyebrow}</div>
             <h2 id="modal-title">{project.title}</h2>

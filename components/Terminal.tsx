@@ -76,7 +76,7 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
   const [segIndex, setSegIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const done = lineIndex >= LINES.length;
-  const firedDoneRef = useRef(false);
+  const calledOnDoneRef = useRef<(() => void) | undefined>(undefined);
 
   useEffect(() => {
     const id = setTimeout(() => setStarted(true), START_DELAY);
@@ -84,9 +84,9 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
   }, []);
 
   useEffect(() => {
-    if (done && !firedDoneRef.current) {
-      firedDoneRef.current = true;
-      onDone?.();
+    if (done && onDone && calledOnDoneRef.current !== onDone) {
+      calledOnDoneRef.current = onDone;
+      onDone();
     }
   }, [done, onDone]);
 

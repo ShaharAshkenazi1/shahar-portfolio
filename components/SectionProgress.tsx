@@ -17,12 +17,13 @@ export default function SectionProgress() {
 
   useEffect(() => {
     if (!isDesktopPointer()) return;
-    setEnabled(true);
 
     const els = SECTIONS.map((s) => document.getElementById(s.id)).filter(
       (el): el is HTMLElement => !!el
     );
     if (!els.length) return;
+
+    setEnabled(true);
 
     const obs = new IntersectionObserver(
       (entries) => {

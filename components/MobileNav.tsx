@@ -54,14 +54,20 @@ export default function MobileNav() {
       (el): el is HTMLElement => el !== null
     );
 
+    const visibleIds = new Set<string>();
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length > 0) {
-          const topmost = visible.reduce((a, b) =>
-            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
-          );
-          setActive(topmost.target.id);
+        entries.forEach((e) => {
+          if (e.isIntersecting) visibleIds.add(e.target.id);
+          else visibleIds.delete(e.target.id);
+        });
+        if (visibleIds.size > 0) {
+          const topmost = sections
+            .filter((s) => s && visibleIds.has(s.id))
+            .sort((a, b) => a!.getBoundingClientRect().top - b!.getBoundingClientRect().top)[0];
+          if (topmost) setActive(topmost.id);
+        } else {
+          setActive("");
         }
       },
       { rootMargin: "-20% 0px -70% 0px" }

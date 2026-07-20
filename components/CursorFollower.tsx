@@ -44,7 +44,8 @@ export default function CursorFollower() {
       if (isInteractive(e.target)) ringRef.current?.classList.add("is-hover");
     };
     const onOut = (e: MouseEvent) => {
-      if (isInteractive(e.target)) ringRef.current?.classList.remove("is-hover");
+      if (isInteractive(e.target) && !isInteractive(e.relatedTarget))
+        ringRef.current?.classList.remove("is-hover");
     };
 
     window.addEventListener("mousemove", onMove, { passive: true });
