@@ -15,11 +15,7 @@ const LINES: TermLine[] = [
   { segments: [""], color: "blank", speed: 0 },
   {
     segments: [
-      "01  Leading platforms used by ",
-      { count: 500, suffix: "+" },
-      " users and processing ",
-      { count: 1000, suffix: "+" },
-      " new operational records daily across real-world client environments.",
+      "01  Led the scale-up of healthcare platforms from 1 to 5 enterprise clients, growing the therapist network from 30 to 350+.",
     ],
     color: "green",
     speed: 12,
@@ -27,7 +23,7 @@ const LINES: TermLine[] = [
   { segments: [""], color: "blank", speed: 0 },
   {
     segments: [
-      "02  Managing a 5-developer team across product strategy, system integrations, and end-to-end deployments.",
+      "02  Leading 3 concurrent software projects and managing a cross-functional team of 5 developers from planning to production.",
     ],
     color: "green",
     speed: 12,
@@ -35,7 +31,7 @@ const LINES: TermLine[] = [
   { segments: [""], color: "blank", speed: 0 },
   {
     segments: [
-      "03  Technical Product Manager leading healthcare platforms from client requirements through engineering, QA, and production delivery.",
+      "03  Leveraging AI tools such as Claude Code, Cursor, and ChatGPT to accelerate product delivery, technical planning, and software development.",
     ],
     color: "green",
     speed: 12,
@@ -173,13 +169,13 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
 
       <ul className="visually-hidden">
         <li>
-          Leading platforms used by 500+ users and processing 1,000+ new operational records daily across real-world client environments.
+          Led the scale-up of healthcare platforms from 1 to 5 enterprise clients, growing the therapist network from 30 to 350+.
         </li>
         <li>
-          Managing a 5-developer team across product strategy, system integrations, and end-to-end deployments.
+          Leading 3 concurrent software projects and managing a cross-functional team of 5 developers from planning to production.
         </li>
         <li>
-          Technical Product Manager leading healthcare platforms from client requirements through engineering, QA, and production delivery.
+          Leveraging AI tools such as Claude Code, Cursor, and ChatGPT to accelerate product delivery, technical planning, and software development.
         </li>
       </ul>
     </div>
