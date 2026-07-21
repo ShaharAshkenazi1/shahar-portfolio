@@ -14,7 +14,7 @@ const LINES: TermLine[] = [
   { segments: ["> loading profile..."], color: "gray", speed: 30 },
   { segments: [""], color: "blank", speed: 0 },
   {
-    segments: ["01  Scaling an enterprise platform"],
+    segments: ["01  Managing an enterprise platform"],
     color: "green",
     speed: 12,
   },
@@ -202,7 +202,7 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
 
       <ul className="visually-hidden">
         <li>
-          Scaling an enterprise platform: 1 to 5 enterprise clients, 30 to 350+ active professionals, 1,000+ records processed daily.
+          Managing an enterprise platform: 1 to 5 enterprise clients, 30 to 350+ active professionals, 1,000+ records processed daily.
         </li>
         <li>
           Leading 3 concurrent software projects and managing a cross-functional team of 5 developers from planning to production.
