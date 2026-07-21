@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Segment = string | { count: number; suffix: string };
+type Segment = string | { count: number; suffix: string; from?: number; comma?: boolean };
 
 type TermLine = {
   segments: Segment[];
@@ -14,9 +14,22 @@ const LINES: TermLine[] = [
   { segments: ["> loading profile..."], color: "gray", speed: 30 },
   { segments: [""], color: "blank", speed: 0 },
   {
-    segments: [
-      "01  Led the scale-up of healthcare platforms from 1 to 5 enterprise clients, growing the therapist network from 30 to 350+.",
-    ],
+    segments: ["01  Scaling an enterprise platform"],
+    color: "green",
+    speed: 12,
+  },
+  {
+    segments: ["    1 → ", { count: 5, suffix: "", from: 1 }, "  Enterprise Clients"],
+    color: "green",
+    speed: 12,
+  },
+  {
+    segments: ["    30 → ", { count: 350, suffix: "+", from: 30 }, "  Active Professionals"],
+    color: "green",
+    speed: 12,
+  },
+  {
+    segments: ["    ", { count: 1000, suffix: "+", comma: true }, "  Records Processed Daily"],
     color: "green",
     speed: 12,
   },
@@ -43,11 +56,23 @@ const LINES: TermLine[] = [
 const START_DELAY = 450;
 const BLANK_PAUSE = 140;
 const LINE_PAUSE = 240;
-const COUNT_DURATION = 650;
-const COUNT_PAUSE = 160;
+const COUNT_DURATION = 380;
+const COUNT_PAUSE = 120;
 
-function Counter({ to, suffix, start }: { to: number; suffix: string; start: boolean }) {
-  const [value, setValue] = useState(0);
+function Counter({
+  to,
+  suffix,
+  from = 0,
+  comma = false,
+  start,
+}: {
+  to: number;
+  suffix: string;
+  from?: number;
+  comma?: boolean;
+  start: boolean;
+}) {
+  const [value, setValue] = useState(from);
 
   useEffect(() => {
     if (!start) return;
@@ -55,15 +80,17 @@ function Counter({ to, suffix, start }: { to: number; suffix: string; start: boo
     const startTime = performance.now();
     const tick = (now: number) => {
       const progress = Math.min((now - startTime) / COUNT_DURATION, 1);
-      setValue(Math.round(progress * to));
+      setValue(Math.round(from + progress * (to - from)));
       if (progress < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [start, to]);
+  }, [start, to, from]);
 
-  const padded = String(value).padStart(String(to).length, "0");
-  return <>{padded}{suffix}</>;
+  const text = comma
+    ? value.toLocaleString("en-US")
+    : String(value).padStart(String(to).length, "0");
+  return <>{text}{suffix}</>;
 }
 
 export default function Terminal({ onDone }: { onDone?: () => void }) {
@@ -157,7 +184,13 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
 
               return (
                 <span key={si} className={state === "pending" ? "terminal-hidden" : undefined}>
-                  <Counter to={seg.count} suffix={seg.suffix} start={state !== "pending"} />
+                  <Counter
+                    to={seg.count}
+                    suffix={seg.suffix}
+                    from={seg.from}
+                    comma={seg.comma}
+                    start={state !== "pending"}
+                  />
                   {state === "active" && <span className="terminal-cursor" />}
                 </span>
               );
@@ -169,7 +202,7 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
 
       <ul className="visually-hidden">
         <li>
-          Led the scale-up of healthcare platforms from 1 to 5 enterprise clients, growing the therapist network from 30 to 350+.
+          Scaling an enterprise platform: 1 to 5 enterprise clients, 30 to 350+ active professionals, 1,000+ records processed daily.
         </li>
         <li>
           Leading 3 concurrent software projects and managing a cross-functional team of 5 developers from planning to production.
