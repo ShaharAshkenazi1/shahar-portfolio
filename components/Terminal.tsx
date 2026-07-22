@@ -29,7 +29,7 @@ const LINES: TermLine[] = [
     speed: 12,
   },
   {
-    segments: ["    900 → ", { count: 1100, suffix: "", from: 900, comma: true }, "  Records Processed Daily"],
+    segments: ["    400 → ", { count: 1100, suffix: "", from: 400, comma: true }, "  Records Processed Daily"],
     color: "green",
     speed: 12,
   },
@@ -202,7 +202,7 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
 
       <ul className="visually-hidden">
         <li>
-          Managing an enterprise platform: 1 to 5 enterprise clients, 15 to 445+ active professionals, 900 to 1,100 records processed daily.
+          Managing an enterprise platform: 1 to 5 enterprise clients, 15 to 445+ active professionals, 400 to 1,100 records processed daily.
         </li>
         <li>
           Leading 3 concurrent software projects and managing a cross-functional team of 5 developers from planning to production.
