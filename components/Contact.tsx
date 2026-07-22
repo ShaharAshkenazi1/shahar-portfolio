@@ -103,6 +103,16 @@ export default function Contact() {
                 <span className="arr">↗</span>
               </a>
             </motion.div>
+
+            <motion.p
+              className="contact-footnote"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ...t, delay: 0.18 }}
+              viewport={view}
+            >
+              Off the clock: training for a half marathon, drives manual because automatic feels like cheating.
+            </motion.p>
           </div>
         </div>
       </div>
