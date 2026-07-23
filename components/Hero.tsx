@@ -59,7 +59,10 @@ export default function Hero() {
               className="btn btn-cv magnetic"
               href="/Shahar_Ashkenazi_CV.pdf"
               download="Shahar_Ashkenazi_CV.pdf"
-              onClick={() => sendGAEvent("event", "cv_downloaded")}
+              onClick={() => {
+                sendGAEvent("event", "cv_downloaded");
+                fetch("/api/cv-click", { method: "POST" });
+              }}
             >
               <svg
                 className="cv-icon"

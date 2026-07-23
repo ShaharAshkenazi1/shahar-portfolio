@@ -25,7 +25,10 @@ export default function FloatingCV() {
       download="Shahar_Ashkenazi_CV.pdf"
       className={`fab-cv${visible ? " fab-cv--visible" : ""}`}
       aria-label="Download CV"
-      onClick={() => sendGAEvent("event", "cv_downloaded", { source: "fab" })}
+      onClick={() => {
+        sendGAEvent("event", "cv_downloaded", { source: "fab" });
+        fetch("/api/cv-click", { method: "POST" });
+      }}
     >
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path
