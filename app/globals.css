@@ -1243,3 +1243,41 @@ body.modal-open { overflow: hidden; }
   .cursor-ring { transition: none; }
   .magnetic { transition: none; }
 }
+
+/* ---------- ANNOUNCEMENT BANNER ---------- */
+.announce-banner {
+  position: sticky;
+  top: 60px;
+  z-index: 49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 9px var(--gutter);
+  background: color-mix(in oklab, var(--accent) 10%, var(--bg));
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 25%, transparent);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--fg-2);
+}
+.announce-pulse {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: pulse 1.8s infinite;
+}
+.announce-text a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.announce-dismiss {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+  padding: 0 4px;
+  transition: color .15s;
+}
+.announce-dismiss:hover { color: var(--fg); }

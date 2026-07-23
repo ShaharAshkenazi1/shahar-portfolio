@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function FloatingCV() {
   const [visible, setVisible] = useState(false);
@@ -24,6 +25,7 @@ export default function FloatingCV() {
       download="Shahar_Ashkenazi_CV.pdf"
       className={`fab-cv${visible ? " fab-cv--visible" : ""}`}
       aria-label="Download CV"
+      onClick={() => sendGAEvent("event", "cv_downloaded", { source: "fab" })}
     >
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path
