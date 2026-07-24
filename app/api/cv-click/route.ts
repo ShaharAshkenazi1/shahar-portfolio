@@ -1,7 +1,23 @@
 import { Resend } from "resend";
 import { NextResponse, NextRequest } from "next/server";
 
+const ALLOWED_ORIGINS = ["https://shahar-ashkenazi.com"];
+
 export async function POST(req: NextRequest) {
+  const origin = req.headers.get("origin") ?? "";
+  const referer = req.headers.get("referer") ?? "";
+  const isAllowed =
+    ALLOWED_ORIGINS.some((o) => origin === o || referer.startsWith(o)) ||
+    process.env.NODE_ENV === "development";
+
+  if (!isAllowed) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json({ error: "Not configured" }, { status: 500 });
+  }
+
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   const now = new Date().toLocaleString("en-IL", {
@@ -15,7 +31,7 @@ export async function POST(req: NextRequest) {
   const city = req.headers.get("x-vercel-ip-city") ?? "Unknown";
   const region = req.headers.get("x-vercel-ip-region") ?? "";
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "Unknown";
-  const referer = req.headers.get("referer") ?? "Direct";
+  const refererDisplay = referer || "Direct";
 
   const location = [city, region, country].filter(Boolean).join(", ");
 
@@ -60,7 +76,7 @@ export async function POST(req: NextRequest) {
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #888;">Came from</td>
-            <td style="padding: 8px 0; color: #222;">${referer}</td>
+            <td style="padding: 8px 0; color: #222;">${refererDisplay}</td>
           </tr>
         </table>
       </div>
