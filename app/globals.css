@@ -1166,44 +1166,6 @@ body.modal-open { overflow: hidden; }
   }
 }
 
-/* ---------- CUSTOM CURSOR ---------- */
-.custom-cursor-active, .custom-cursor-active * { cursor: none !important; }
-.cursor-dot, .cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 50%;
-  will-change: transform;
-}
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-  background: #fff;
-  mix-blend-mode: difference;
-}
-.cursor-ring {
-  width: 32px;
-  height: 32px;
-  margin: -16px 0 0 -16px;
-  border: 1px solid #fff;
-  mix-blend-mode: difference;
-  transition: width .25s ease, height .25s ease, margin .25s ease,
-              border-color .25s ease, background-color .25s ease;
-}
-.cursor-ring.is-hover {
-  width: 54px;
-  height: 54px;
-  margin: -27px 0 0 -27px;
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #fff;
-}
-@media not ((any-hover: hover) and (any-pointer: fine)) {
-  .cursor-dot, .cursor-ring { display: none; }
-}
-
 /* ---------- MAGNETIC ---------- */
 .magnetic {
   transition: transform .25s cubic-bezier(0.2, 0.7, 0.2, 1);

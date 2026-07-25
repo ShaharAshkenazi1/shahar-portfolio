@@ -29,7 +29,7 @@ Single-page portfolio — one route (`app/page.tsx`) that composes all sections 
 Hero -> Projects -> Experience -> Skills -> Contact
 ```
 
-Wrapped by layout-level UI: `Navbar`, `AnnouncementBanner`, `MobileNav`, `Footer`, `FloatingCV`, `ScrollProgress`, `SectionProgress`, `CursorFollower`, `RevealObserver`.
+Wrapped by layout-level UI: `Navbar`, `AnnouncementBanner`, `MobileNav`, `Footer`, `FloatingCV`, `ScrollProgress`, `SectionProgress`, `RevealObserver`.
 
 Page content fades in on first load via `PageTransition` (wraps `{children}` in `app/layout.tsx`).
 

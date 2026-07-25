@@ -10,12 +10,10 @@ import Footer from "@/components/Footer";
 import MobileNav from "@/components/MobileNav";
 import FloatingCV from "@/components/FloatingCV";
 import ScrollProgress from "@/components/ScrollProgress";
-import CursorFollower from "@/components/CursorFollower";
 import SectionProgress from "@/components/SectionProgress";
 export default function Home() {
   return (
     <>
-      <CursorFollower />
       <ScrollProgress />
       <SectionProgress />
       <RevealObserver />
