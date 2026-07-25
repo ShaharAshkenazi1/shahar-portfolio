@@ -28,7 +28,7 @@ Single-page portfolio — one route (`app/page.tsx`) that composes all sections 
 Hero → Projects → Experience → Skills → Contact
 ```
 
-Wrapped by layout-level UI: `Navbar`, `MobileNav`, `Footer`, `FloatingCV`, `ScrollProgress`, `SectionProgress`, `CursorFollower`, `RevealObserver`.
+Wrapped by layout-level UI: `Navbar`, `MobileNav`, `Footer`, `FloatingCV`, `ScrollProgress`, `SectionProgress`, `RevealObserver`.
 
 ### `components/`
 Each section is its own component. UI-only components with no shared state — all data is hardcoded inside each component.
