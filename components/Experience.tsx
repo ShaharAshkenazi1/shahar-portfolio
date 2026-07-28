@@ -51,10 +51,10 @@ export default function Experience() {
                   the path from spec to production release.
                 </p>
                 <ul className="bullets">
-                  <li>Own sprint planning, specs, QA, and release for a team of 5+ developers.</li>
-                  <li>Design system integration architecture and API contracts between internal platforms and third-party vendors.</li>
+                  <li>Grew the platform&apos;s enterprise client base from 1 to 5 while scaling to 445+ active professionals on the system.</li>
+                  <li>Own sprint planning, specs, QA, and release for a team of 5+ developers across 3 concurrent projects.</li>
+                  <li>Design system integration architecture and API contracts handling 1,100+ records processed daily between internal platforms and third-party vendors.</li>
                   <li>Drive technical discovery - translating enterprise client requirements into scoped, actionable delivery plans.</li>
-                  <li>Manage stakeholder communication across technical and business teams.</li>
                   <li>Partner with QA on test strategy and own release readiness for production deployments.</li>
                 </ul>
               </div>
@@ -73,9 +73,9 @@ export default function Experience() {
                 <h3 className="who">Sales Engineer</h3>
                 <div className="where">Comax ERP</div>
                 <p className="gist">
-                  Technical pre-sales for enterprise prospects, bridging product
-                  and sales teams. Delivered demos, scoped feasibility, and
-                  supported onboarding for new clients.
+                  Owned the technical side of enterprise deals - the bridge between
+                  what sales promised and what engineering could ship. Ran feasibility
+                  scoping, live demos, and onboarding for incoming clients.
                 </p>
               </div>
             </motion.div>
@@ -93,9 +93,10 @@ export default function Experience() {
                 <h3 className="who">Commando Squad Commander</h3>
                 <div className="where">Duvdevan Unit · Israel Defense Forces</div>
                 <p className="gist">
-                  Commanded a 25-soldier squad in complex operational missions
-                  requiring rapid decision-making under pressure. Trained and
-                  developed soldiers, building team cohesion and execution
+                  Commanded a 25-soldier squad through complex operational missions -
+                  planning under uncertainty, making the call with incomplete
+                  information, and owning outcomes with zero room for a second
+                  attempt. Trained and developed soldiers, building execution
                   standards under demanding conditions.
                 </p>
               </div>
