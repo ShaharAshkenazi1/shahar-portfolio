@@ -25,10 +25,6 @@ export default function Hero() {
             <p className="hero-role" data-reveal="">
               <RoleTypewriter />
             </p>
-            <p className="hero-tagline" data-reveal="">
-              Led a 25-soldier squad, sold enterprise software, now build and ship
-              with AI-native tools - I turn ambiguity into working systems.
-            </p>
             <span className="hero-badge" data-reveal="">
               <span className="hero-badge-dot" />
               Open to opportunities
