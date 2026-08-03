@@ -1,14 +1,16 @@
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MobileNav from "@/components/MobileNav";
 import FloatingCV from "@/components/FloatingCV";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionProgress from "@/components/SectionProgress";
+
+const Projects = dynamic(() => import("@/components/Projects"));
+const Experience = dynamic(() => import("@/components/Experience"));
+const Skills = dynamic(() => import("@/components/Skills"));
+const Contact = dynamic(() => import("@/components/Contact"));
 export default function Home() {
   return (
     <>
