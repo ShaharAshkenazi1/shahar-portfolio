@@ -11,7 +11,6 @@ export default function Navbar() {
       <div className="wrap nav-inner">
         <a href="#top" className="mark" aria-label="Home">
           <span className="glyph">S</span>
-          <span>Shahar Ashkenazi</span>
         </a>
         <nav className="nav-links" aria-label="Primary">
           <a href="#projects">Projects</a>

@@ -25,10 +25,6 @@ export default function Hero() {
             <p className="hero-role">
               <RoleTypewriter />
             </p>
-            <span className="hero-badge">
-              <span className="hero-badge-dot" />
-              Open to opportunities
-            </span>
           </div>
           <div className="hero-photo-wrap">
             <span className="hero-photo-placeholder" aria-hidden="true">
