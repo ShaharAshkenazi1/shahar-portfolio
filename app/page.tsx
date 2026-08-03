@@ -1,6 +1,5 @@
 import RevealObserver from "@/components/RevealObserver";
 import Navbar from "@/components/Navbar";
-import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
@@ -18,7 +17,6 @@ export default function Home() {
       <SectionProgress />
       <RevealObserver />
       <Navbar />
-      <AnnouncementBanner />
       <main id="top">
         <Hero />
         <Projects />

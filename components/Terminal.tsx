@@ -19,12 +19,17 @@ const LINES: TermLine[] = [
     speed: 12,
   },
   {
-    segments: ["    1 → ", { count: 5, suffix: "", from: 1 }, "  Enterprise Clients"],
+    segments: ["    1 → ", { count: 7, suffix: "", from: 1 }, "  Enterprise Clients"],
     color: "green",
     speed: 12,
   },
   {
-    segments: ["    15 → ", { count: 445, suffix: "+", from: 15 }, "  Active Professionals"],
+    segments: ["    15 → ", { count: 445, suffix: "+", from: 15 }, "  Active Superusers"],
+    color: "green",
+    speed: 12,
+  },
+  {
+    segments: ["    85 → ", { count: 2300, suffix: "+", from: 85 }, "  Active Users"],
     color: "green",
     speed: 12,
   },
@@ -36,7 +41,7 @@ const LINES: TermLine[] = [
   { segments: [""], color: "blank", speed: 0 },
   {
     segments: [
-      "02  Leading 3 concurrent software projects and managing a cross-functional team of 5 developers from planning to production.",
+      "02  Leading 3 parallel software projects and managing a cross-functional team of 5 developers from planning to production.",
     ],
     color: "green",
     speed: 12,
@@ -202,10 +207,10 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
 
       <ul className="visually-hidden">
         <li>
-          Managing an enterprise platform: 1 to 5 enterprise clients, 15 to 445+ active professionals, 400 to 1,100 records processed daily.
+          Managing an enterprise platform: 1 to 7 enterprise clients, 15 to 445+ active superusers, 85 to 2,300+ active users, 400 to 1,100 records processed daily.
         </li>
         <li>
-          Leading 3 concurrent software projects and managing a cross-functional team of 5 developers from planning to production.
+          Leading 3 parallel software projects and managing a cross-functional team of 5 developers from planning to production.
         </li>
         <li>
           Leveraging AI tools such as Claude Code, Cursor, and ChatGPT to accelerate product delivery, technical planning, and software development.

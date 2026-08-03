@@ -2,7 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-const TITLES = ["Technical Product Manager", "Team Leader", "Builder", "Shipper"];
+const TITLES = [
+  "Technical Product Manager",
+  "Technical Project Manager",
+  "Product Owner",
+  "Team Leader",
+  "Builder",
+  "Shipper",
+];
 
 const TYPE_SPEED = 55;
 const DELETE_SPEED = 28;
