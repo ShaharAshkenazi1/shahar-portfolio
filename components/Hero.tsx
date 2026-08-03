@@ -16,21 +16,21 @@ export default function Hero() {
       <div className="wrap">
 
         <div className="hero-meta">
-          <span className="label" data-reveal="">Tel Aviv, Israel</span>
+          <span className="label">Tel Aviv, Israel</span>
         </div>
 
         <div className="hero-identity">
           <div className="hero-identity-text">
-            <h1 className="hero-name" data-reveal="">Shahar Ashkenazi.</h1>
-            <p className="hero-role" data-reveal="">
+            <h1 className="hero-name">Shahar Ashkenazi.</h1>
+            <p className="hero-role">
               <RoleTypewriter />
             </p>
-            <span className="hero-badge" data-reveal="">
+            <span className="hero-badge">
               <span className="hero-badge-dot" />
               Open to opportunities
             </span>
           </div>
-          <div className="hero-photo-wrap" data-reveal="">
+          <div className="hero-photo-wrap">
             <span className="hero-photo-placeholder" aria-hidden="true">
               Drop photo<br />shahar.png
             </span>
@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="hero-sub">
           <Terminal />
 
-          <div className="cta-row" data-reveal="">
+          <div className="cta-row">
             <a
               ref={cvRef}
               className="btn btn-cv magnetic"

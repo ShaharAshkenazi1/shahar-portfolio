@@ -1,4 +1,3 @@
-import RevealObserver from "@/components/RevealObserver";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
@@ -15,7 +14,6 @@ export default function Home() {
     <>
       <ScrollProgress />
       <SectionProgress />
-      <RevealObserver />
       <Navbar />
       <main id="top">
         <Hero />

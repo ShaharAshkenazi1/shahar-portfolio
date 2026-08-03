@@ -794,17 +794,6 @@ footer a:hover { color: var(--accent); }
   }
 }
 
-/* ---------- REVEAL ---------- */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-[data-reveal].in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; }
-}
-
 /* ---------- MODAL ---------- */
 .modal-root {
   position: fixed;

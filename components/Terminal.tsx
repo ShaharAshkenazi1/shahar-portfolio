@@ -159,7 +159,7 @@ export default function Terminal({ onDone }: { onDone?: () => void }) {
   };
 
   return (
-    <div className="terminal" data-reveal="">
+    <div className="terminal">
       <div className="terminal-bar">
         <span className="terminal-dot terminal-dot-red" aria-hidden="true" />
         <span className="terminal-dot terminal-dot-yellow" aria-hidden="true" />

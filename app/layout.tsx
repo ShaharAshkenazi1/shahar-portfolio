@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import PageTransition from "@/components/PageTransition";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -47,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <PageTransition>{children}</PageTransition>
+        {children}
         <Analytics />
         <GoogleAnalytics gaId="G-XCCESCW7BC" />
       </body>
