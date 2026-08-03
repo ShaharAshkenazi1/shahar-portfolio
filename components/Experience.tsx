@@ -51,11 +51,11 @@ export default function Experience() {
                   the path from spec to production release.
                 </p>
                 <ul className="bullets">
-                  <li>Grew the platform&apos;s enterprise client base from 1 to 5 while scaling to 445+ active professionals on the system.</li>
-                  <li>Own sprint planning, specs, QA, and release for a team of 5+ developers across 3 concurrent projects.</li>
+                  <li>Grew the platform&apos;s enterprise client base from 1 to 7, scaling to 445+ active superusers and 2,300+ active users on the system.</li>
+                  <li>Own sprint planning, specs, QA, and release for a team of 5 developers across 3 parallel projects.</li>
                   <li>Design system integration architecture and API contracts handling 1,100+ records processed daily between internal platforms and third-party vendors.</li>
                   <li>Drive technical discovery - translating enterprise client requirements into scoped, actionable delivery plans.</li>
-                  <li>Partner with QA on test strategy and own release readiness for production deployments.</li>
+                  <li>Leverage AI tools such as Claude Code, Cursor, and ChatGPT to accelerate product delivery, technical planning, and software development.</li>
                 </ul>
               </div>
             </motion.div>
