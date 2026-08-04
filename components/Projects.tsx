@@ -406,6 +406,25 @@ export default function Projects() {
   const ctaRefA = useMagnetic<HTMLSpanElement>(0.3, 50);
   const ctaRefB = useMagnetic<HTMLSpanElement>(0.3, 50);
 
+  useEffect(() => {
+    const onPopState = () => setOpenProject(null);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const openModal = useCallback((key: ProjectKey) => {
+    window.history.pushState({ modal: key }, "", window.location.href);
+    setOpenProject(key);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    if (window.history.state?.modal) {
+      window.history.back();
+    } else {
+      setOpenProject(null);
+    }
+  }, []);
+
   return (
     <section id="projects">
       <div className="wrap">
@@ -431,7 +450,7 @@ export default function Projects() {
               aria-label="View HeadUp case study"
               onClick={() => {
                 sendGAEvent("event", "case_study_opened", { project: "headup" });
-                setOpenProject("headup");
+                openModal("headup");
               }}
               onMouseMove={tiltA.onMouseMove}
               onMouseEnter={tiltA.onMouseEnter}
@@ -476,7 +495,7 @@ export default function Projects() {
               aria-label="View Carvertise case study"
               onClick={() => {
                 sendGAEvent("event", "case_study_opened", { project: "carvertise" });
-                setOpenProject("carvertise");
+                openModal("carvertise");
               }}
               onMouseMove={tiltB.onMouseMove}
               onMouseEnter={tiltB.onMouseEnter}
@@ -521,7 +540,7 @@ export default function Projects() {
       {openProject && (
         <ProjectModal
           projectKey={openProject}
-          onClose={() => setOpenProject(null)}
+          onClose={closeModal}
         />
       )}
     </section>
