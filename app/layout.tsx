@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 
 const BASE_URL = "https://shahar-ashkenazi.com";
 
-const TITLE = "Shahar Ashkenazi — Technical Product Manager";
+const TITLE = "Shahar Ashkenazi — Technical Project Manager";
 const DESCRIPTION =
-  "Technical Product Manager based in Tel Aviv. Enterprise integrations, operational software, cross-functional delivery.";
+  "Technical Project Manager based in Tel Aviv. Enterprise integrations, operational software, cross-functional delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

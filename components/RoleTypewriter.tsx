@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 const TITLES = [
-  "Technical Product Manager",
   "Technical Project Manager",
+  "Technical Product Manager",
   "Product Owner",
   "Team Leader",
   "Builder",

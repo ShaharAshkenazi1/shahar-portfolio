@@ -44,7 +44,7 @@ export default function Experience() {
                 Oct 2024 - Present
               </div>
               <div>
-                <h3 className="who">Technical Product Manager</h3>
+                <h3 className="who">Technical Project Manager</h3>
                 <div className="where">Target Systems · Tel Aviv</div>
                 <p className="gist">
                   Lead a cross-functional development team end-to-end, owning

@@ -61,7 +61,7 @@ const PROJECTS = {
     tagline:
       "A mobile wellness product that detects unhealthy smartphone posture in real time using phone sensors and delivers haptic feedback to build better habits - built end-to-end, then pivoted from B2C to B2B.",
     meta: [
-      { label: "Role",     val: "Product Lead & Android Developer" },
+      { label: "Role",     val: "Technical Product Manager" },
       { label: "Program",  val: "Cherry Seed · Duvdevan Foundation × Reichman U." },
       { label: "Stack",    val: "Android · Kotlin · IMU Sensors · Foreground Services" },
       { label: "Timeline", val: "Nov 2025 - Mar 2026" },
@@ -477,7 +477,7 @@ export default function Projects() {
                 Pivoted from consumer to <strong>B2B wellness</strong>.
               </p>
               <div className="card-stack">
-                <span className="pill">Product lead</span>
+                <span className="pill">Product manager</span>
                 <span className="pill">Android</span>
                 <span className="pill">Kotlin</span>
                 <span className="pill">Phone sensors</span>
