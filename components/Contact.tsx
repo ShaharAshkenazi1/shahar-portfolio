@@ -102,6 +102,23 @@ export default function Contact() {
                 <span className="val">+972 54-215-6321</span>
                 <span className="arr">↗</span>
               </a>
+              <a
+                className="contact-card"
+                href="https://wa.me/972542156321"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => sendGAEvent("event", "whatsapp_clicked")}
+              >
+                <span className="lbl">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M10 2.5a7.5 7.5 0 00-6.42 11.34L2.5 17.5l3.78-1.04A7.5 7.5 0 1010 2.5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+                    <path d="M7 8.2c.3 2.6 2.2 4.5 4.8 4.8.8.1 1-.4 1-.9v-.7c0-.3-.2-.5-.5-.6l-1.3-.4a.6.6 0 00-.6.2l-.3.4a5 5 0 01-2.1-2.1l.4-.3a.6.6 0 00.2-.6l-.4-1.3a.6.6 0 00-.6-.5H6.9c-.5 0-1 .2-.9 1z" fill="currentColor" stroke="none" />
+                  </svg>
+                  WhatsApp
+                </span>
+                <span className="val">Chat with me</span>
+                <span className="arr">↗</span>
+              </a>
             </motion.div>
 
             <motion.p
