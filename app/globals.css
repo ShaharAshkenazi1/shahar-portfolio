@@ -41,6 +41,33 @@ img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
 
+/* ---------- DOT GRID ---------- */
+.dot-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.dot-grid-base,
+.dot-grid-spotlight {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1.5px);
+  background-size: 26px 26px;
+}
+.dot-grid-base {
+  color: color-mix(in oklab, var(--fg) 14%, transparent);
+}
+.dot-grid-spotlight {
+  color: var(--accent);
+  opacity: 0.85;
+  -webkit-mask-image: radial-gradient(circle 200px at var(--mx, -9999px) var(--my, -9999px), black 0%, transparent 70%);
+  mask-image: radial-gradient(circle 200px at var(--mx, -9999px) var(--my, -9999px), black 0%, transparent 70%);
+}
+@media (prefers-reduced-motion: reduce), (any-hover: none), (any-pointer: coarse) {
+  .dot-grid-spotlight { display: none; }
+}
+
 /* ---------- HELPERS ---------- */
 .wrap {
   max-width: var(--maxw);
