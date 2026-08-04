@@ -70,13 +70,12 @@ export default function Experience() {
             >
               <div className="when">Jun 2021 - Jun 2022</div>
               <div>
-                <h3 className="who">Sales Engineer</h3>
+                <h3 className="who">Project Manager</h3>
                 <div className="where">Comax ERP</div>
-                <p className="gist">
-                  Owned the technical side of enterprise deals - the bridge between
-                  what sales promised and what engineering could ship. Ran feasibility
-                  scoping, live demos, and onboarding for incoming clients.
-                </p>
+                <ul className="bullets">
+                  <li>Led client discovery sessions, analyzed business requirements, and translated them into functional requirements and implementation plans for ERP projects.</li>
+                  <li>Managed customer implementation processes, coordinating between clients and cross-functional teams to ensure successful project delivery.</li>
+                </ul>
               </div>
             </motion.div>
 
