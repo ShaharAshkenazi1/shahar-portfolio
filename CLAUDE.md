@@ -62,3 +62,30 @@ Both the hero CV button (`components/Hero.tsx`) and the floating button (`compon
 | Variable | Where | Purpose |
 |----------|-------|---------|
 | `RESEND_API_KEY` | Vercel (sensitive) | Resend email API key for CV download notifications |
+
+## End of every session
+
+Before finishing any session that touched code, do all four — the owner should never need to ask:
+
+1. **Run `npm run lint` and `npm run build`** before pushing. Vercel auto-deploys from `main`, so a broken build must never be pushed.
+2. **Commit and push** whatever is finished. Nothing should be left staged or local-only.
+3. **Update this file** if something was learned that the next session needs and isn't obvious from the code — a non-obvious gotcha, a new setup step, a pattern to follow or avoid.
+4. **Sync the North AI homepage.** Derive a short, plain-language goal/next-move phrase (project-card length, e.g. "Add North AI to the projects section" — not a paragraph) describing what this session left as the next thing to do. Write it via the Supabase MCP (project id `ogffbptcudyoikmrrukf`):
+   ```sql
+   update public.projects
+   set current_goal = '<derived text>', updated_at = now()
+   where id = 'portfolio';
+   ```
+   This is what North AI's homepage shows for Portfolio, so it should read like a real next move, not a status label. No approval needed — this runs automatically. If the write fails (MCP unavailable, etc.), note it and move on; never block session close on it.
+
+If the session ends mid-task, say so plainly (what's done, what's left, what branch) rather than leaving it to be discovered.
+
+### "Session shut-down" check
+
+When the owner writes **"session shut-down"**, treat it as a request for a read-only status check, not a new round of the checklist above. Verify, in this order:
+
+1. **Git**: `git status --short` is clean (nothing staged/unstaged/untracked that matters), and the current branch's HEAD matches its `origin` remote (fetch and compare — don't assume a local push landed).
+2. **Build**: the last push passed `npm run build` locally, and Vercel's latest deployment for `main` is READY, not ERROR.
+3. **North AI sync**: the `portfolio` row's `current_goal` in North AI's Supabase (project `ogffbptcudyoikmrrukf`) reflects current reality — read it back with `select current_goal from public.projects where id = 'portfolio';` and confirm it isn't describing already-finished work.
+
+Then answer with a direct **yes** or **no** first, before any detail — the owner wants a fast readback, not a re-walk of the checklist. If "no", say exactly what's still open (uncommitted file, unpushed commit, stale goal, etc.) so it's a punch list, not a re-investigation.
